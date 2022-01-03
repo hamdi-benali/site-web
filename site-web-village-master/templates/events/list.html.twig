@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title_page.events_page' | trans ({}, 'navigation') }}{% endblock %}
+
+{% block body %}
+
+<!-- Page Content -->
+<div class="container mt-4">
+    <!-- Page Heading -->
+    <h1 class="my-4 text-center">{{ 'events.title' | trans }}</h1>
+    <br>
+    <hr>
+    <!-- Affichage de tous les Events -->
+    <!-- row -->
+    <div class="pt-4">
+        <div class="row">
+            {% if theEvents %}
+            {% for event in theEvents %}
+            {{ include('events/_event.html.twig') }}
+            {% endfor %}
+            {% else %}
+            <p>{{ ('welcome.calendar.empty-event') | trans }}</p>
+            {% endif %}
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Pagination -->
+    <div class="row justify-content-center">
+        <div class="navigation">
+            {{ knp_pagination_render(theEvents) }}
+        </div>
+    </div>
+    <!-- /.Pagination -->
+</div>
+<!-- /container -->
+
+{% endblock %}

@@ -1,0 +1,32 @@
+#-----------------------------------------------------------------
+#           translation catalog of the navigation
+#-----------------------------------------------------------------
+
+# block title 
+title_page:
+  homepage_page: Home - The Village
+  history_page: History page
+  events_page: Events page
+  showEvent_page: Detail of an event
+  findus_page: Find us page
+  contact_page: Contact us page
+
+# element HTML
+# navbar
+navbar:
+  brand: MyBeautifulTown
+  link:
+    home: Home
+    history: History
+    events: Events
+    findus: Find us
+    contact: Contact
+
+# footer
+footer:
+  link:
+    visit_us: Visit us
+    terms: Terms
+    privacy: Privacy policy
+    contact_us: Contact us!
+    copyright: All rights reserved - My Pretty Village

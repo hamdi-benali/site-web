@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'title_page.contact_page' | trans ({}, 'navigation') }}{% endblock %}
+
+{% block body %}
+<section class="container">
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center my-5">{{ 'contact.header.title' | trans }}</h2>
+    <!-- Section description -->
+    <p class="text-center w-responsive mx-auto mb-5">{{ 'contact.header.text' | trans }}</p>
+    <!-- Grid row -->
+    <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-9 mb-md-0 mb-5">
+            {{ include('contact/_form.html.twig', {form: contactForm})  }}
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 text-center">
+            <ul class="list-unstyled mb-0">
+                <li>
+                    <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+                    <p>AFPA POMPEY, 54390 FROUARD, FRANCE</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone fa-2x mt-4 blue-text"></i>
+                    <p>+ 33 610 56 78 95</p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope fa-2x mt-4 blue-text"></i>
+                    <p class="mb-0">contact@notre-dame-des-landes.fr</p>
+                </li>
+            </ul>
+        </div>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+</section>
+{% endblock %}

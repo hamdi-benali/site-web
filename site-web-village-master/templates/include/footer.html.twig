@@ -1,0 +1,19 @@
+<footer class="d-flex flex-column flex-md-column text-center">
+    <ul class="list-inline">
+        <li class="list-inline-item">
+            <a href="{{ path('find-us') }}">{{ 'footer.link.visit_us' | trans ({}, 'navigation') }}</a>
+        </li>
+        <li class="list-inline-item">
+            <a href="#">{{ 'footer.link.terms' | trans ({}, 'navigation') }} &amp; Conditions</a>
+        </li>
+        <li class="list-inline-item">
+            <a href="#">{{ 'footer.link.privacy' | trans ({}, 'navigation') }}</a>
+        </li>
+        <li class="list-inline-item">
+            <a href="{{ path('contact') }}">{{ 'footer.link.contact_us' | trans ({}, 'navigation') }}</a>
+        </li>
+    </ul>
+    <p><br>&copy;
+        {{ 'now'|date('Y') }}
+        - {{ 'footer.link.copyright' | trans ({}, 'navigation') }}</p>
+</footer>

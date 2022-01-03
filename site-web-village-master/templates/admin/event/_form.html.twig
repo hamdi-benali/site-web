@@ -1,0 +1,109 @@
+<!-- elements du formulaire -->
+{{ form_start(form) }}
+
+<!-- Grid row titles & pictures -->
+<div class="row">
+
+    <div class="col-md-8">
+        <!-- Grid row title -->
+        <div class="row">
+            <!-- Grid column -->
+            <div class="col">{{ form_row(form.title) }}</div>
+            <!-- Grid column -->
+        </div>
+        <!-- ./Grid row title -->
+    </div>
+    <div class="col-md-4">
+        <!-- Grid row pictures -->
+        <div class="row flex justify-content-start flex-wrap">
+            <!-- On itere la liste des images -->
+            {% for picture in myEvent.pictures %}
+            <div class="col" style="width: 100px; flex: none; margin: 5px;">
+                <img src="{{ vich_uploader_asset(picture, 'imageFile') | imagine_filter('thumb') }}"
+                    alt="image de l'événement" class="card-img-top" width="100">
+                <a href="{{ path('admin.picture.delete', {id: picture.idPicture}) }}" class="btn btn-danger" data-delete
+                    data-token="{{ csrf_token('delete' ~ picture.idPicture) }}">Delete</a>
+            </div>
+            {% endfor %}
+        </div>
+        <!-- ./Grid row pictures -->
+    </div>
+</div>
+<!-- ./Grid row titles & pictures -->
+
+<!-- Grid row start and end date -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col-md-6">{{ form_row(form.startDateEvent) }}</div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-6">{{ form_row(form.endDateEvent) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- ./Grid row start and end date -->
+
+<!-- Grid row description -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col">{{ form_row(form.description) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- ./Grid row description -->
+
+<!-- Grid row body -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col">{{ form_row(form.body) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- ./Grid row body -->
+
+<!-- Grid row  adress & city & zip_code -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col-6">{{ form_row(form.address) }}</div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-3">{{ form_row(form.city) }}</div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-3">{{ form_row(form.zip_code) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- ./Grid row  adress & city & zip_code -->
+
+<!-- Grid row lat & lng -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col-md-6">{{ form_row(form.lat) }}</div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-6">{{ form_row(form.lng) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- ./Grid row lat & lng -->
+
+<!-- Grid row imageFile -->
+<div class="row">
+    <!-- Grid column -->
+    <div class="col-md-6">{{ form_row(form.pictureFiles) }}</div>
+    <!-- Grid column -->
+</div>
+<!-- Grid row -->
+
+<button class="btn btn-primary">{{ save_button | default('Save') }}</button>
+
+{{ form_end(form) }}
+<!-- ./elements du formulaire -->
+
+<div class="d-flex">
+    <!-- bouton pour revenir a la page precedente -->
+    <div class="ml-auto">
+        <button class="btn btn-info" onclick="history.back(-1)">&laquo; {{ back_button | default('Back') }}</button>
+    </div>
+    <!-- ./bouton pour revenir a la page precedente -->
+</div>

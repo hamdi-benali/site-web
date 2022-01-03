@@ -1,0 +1,20 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        event_image:
+            uri_prefix: /media/events
+            upload_destination: '%kernel.project_dir%/public/media/events'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+
+            # Should the file be injected into the uploadable entity when it is loaded from the data store
+            inject_on_load: false
+            # Should the file be deleted when a new file is uploaded
+            delete_on_update: true
+            # Should the file be deleted when the entity is removed
+            delete_on_remove: true
+
+    #mappings:
+    #    products:
+    #        uri_prefix: /images/products
+    #        upload_destination: '%kernel.project_dir%/public/images/products'
